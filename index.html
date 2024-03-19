@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Weight Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Fish Weight Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="POST">
+        <label for="length1">Length 1:</label>
+        <input type="text" id="length1" name="length1"><br><br>
+        <label for="length2">Length 2:</label>
+        <input type="text" id="length2" name="length2"><br><br>
+        <label for="length3">Length 3:</label>
+        <input type="text" id="length3" name="length3"><br><br>
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height"><br><br>
+        <label for="width">Width:</label>
+        <input type="text" id="width" name="width"><br><br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+    <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
